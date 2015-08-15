@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stanford Maps</title>
+
+    <!-- Link to external CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="locations.css" />
+
+  </head>
+  <body onload="handleResize()">
+
+    <div id="mapFrame">
+      <img id="map" src="map-xl.gif" alt="Stanford Map" />
+    </div> <!-- END #mapFrame -->
+
+    <div id="events">
+      <div id="zoom">
+        <form>
+          <input type="button" value="+" onclick="zoomIn()"/> 
+          <input type="button" value="-" onclick="zoomOut()"/>
+        </form>
+      </div> <!-- END #zoom -->
+
+      <div id="nav">
+        <form>
+          <input class="mar-left" type="button" value="^" onclick="moveUp()"/> 
+          <input class="left mar-right" type="button" value="<" onclick="moveLeft()"/> 
+          <input class="left" type="button" value=">" onclick="moveRight()"/>
+          <span class="clear"></span>        
+          <input class="mar-left" type="button" value="v" onclick="moveDown()"/> 
+        </form>
+      </div> <!-- END #nav -->
+    </div>    
+    <!-- Link to external JavaScript -->
+    <script type="text/javascript" src="locations.js"></script>  
+
+  </body>
+</html>
+

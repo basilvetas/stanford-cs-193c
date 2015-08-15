@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- 
+  Author: Basil Vetas
+  Date: 7/9/15
+   -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Car Options</title>
+
+    <!-- CSS Styling -->
+    <style type="text/css">
+
+      body {
+        font-family: sans-serif;
+      }
+
+      h2 {
+        margin: 0;
+        padding: 5px;
+        background: #808080;
+        color: #FFFFFF;
+        font-family: sans-serif;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      form {
+        min-height: 30px;
+      }
+
+      input {
+        margin-right: 10px;
+      }
+
+      li {        
+        margin: 5px;
+      }
+
+      select {
+        margin-right: 35px;
+        margin-top: 10px;
+      }
+
+      #cars {
+        height: 150px;
+      }
+
+      .border {
+        width: 350px;
+        border: 1px solid #000000;
+        padding: 5px;
+        margin: 10px;
+      }
+
+      .main-list {
+        padding: 0;
+        list-style: none;
+      }
+
+      .sub-list {
+        list-style: disc;
+        padding-left: 20px;
+        font-size: 10pt;
+      }
+
+      .left {
+        float: left;
+      }
+
+      .right {
+        float: right;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+      .total {
+        margin-left: 10px;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+  <h1>Configure Your GT Super Sportscar</h1>
+  
+  <div class="left">
+    <div class="border">
+      <h2>Configuration</h2>
+      <form name="configuration">
+        <ul class="main-list">
+          <li><input type="radio" name="price" value="17790" />GT Manuel <span class="right">$17,790.00</span></li>
+          <li><input type="radio" name="price" value="18590" />GT Automatic <span class="right">$18,590.00</span></li>
+          <li><input type="radio" name="price" value="22455" />GT-S Manuel <span class="right">$22,455.00</span></li>
+          <li><input type="radio" name="price" value="23155" />GT-S Sportshift <span class="right">$23,155.00</span></li>
+        </ul>
+      </form>
+    </div>          
+    <div class="border">
+      <h2>Factory Options</h2>
+      <form name="factoryOptions">
+        <ul class="main-list">
+          <li>
+            <input type="radio" name="price" value="1235" />Option Combo #1 <span class="right">$1,235.00</span>
+            <ul class="sub-list">
+              <li>Power Windows, Doors, Cruise Control</li>
+            </ul>
+          </li>
+          <li>
+            <input type="radio" name="price" value="3354" />Option Combo #2 <span class="right">$3,354.00</span>
+            <ul class="sub-list">
+              <li>Rear Spoiler and Fog Lamps</li>
+              <li>Keyless Entry</li>
+              <li>Power Tilt &amp; Slide Moonroof</li>
+              <li>Power Windows, Doors, Cruise Control</li>
+            </ul>
+          </li>
+          <li>
+            <input type="radio" name="price" value="0" />No Combo <span class="right">$0</span>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <div class="border">
+      <h2>Dealer Options</h2>
+
+      <form name="dealerOptions">
+        <ul class="main-list">
+          <li><input type="checkbox" name="option" value="550" />Upgraded Stereo System<span class="right">$550.00</span></li>
+          <li><input type="checkbox" name="option" value="399" />VIP Security System<span class="right">$399.00</span></li>
+          <li><input type="checkbox" name="option" value="295" />Auto-Dimming Mirror<span class="right">$295.00</span></li>
+        </ul>
+      </form>
+
+    </div>
+    <div class="border">
+      <h2>Total Price</h2>
+      <form>
+        <ul class="main-list">
+          <li>
+            <input class="total left" type="text" id="totalPrice"/>
+            <input class="right" type="button" value="Calculate Total" onclick="calculateTotal()"/>  
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
+
+  <div class="left">
+    <div class="border" id="cars">
+      <h2>Choose a Color</h2>
+      <div class="left">
+        <form>
+          <select onchange="changeCarImg(this.value);">
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="silver">Silver</option>
+            <option value="white">White</option>
+            <option value="black">Black</option>
+          </select>
+        </form>  
+      </div>
+      <div class="left">
+        <img id="carImg" src="red.jpg" alt="car" />
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- JavaScript -->
+  <script type="text/javascript">
+
+    "use strict";
+
+    // Changes car image based on selection
+    function changeCarImg(color)
+    {
+      document.getElementById("carImg").src= color + '.jpg';
+    }
+
+    // Changes total price of car based on customization options
+    function calculateTotal()
+    {
+      var configCost = 0;
+      var factCost = 0;
+      
+      if(document.configuration.price.value !== "")
+        configCost = parseFloat(document.configuration.price.value);      
+
+      if(document.factoryOptions.price.value !== "")
+        factCost = parseFloat(document.factoryOptions.price.value);
+
+      var total =  configCost + factCost;
+      var dealerOptions = document.getElementsByName("option");
+
+      for(var i = 0; i < dealerOptions.length; i++)
+        if(dealerOptions[i].checked)
+          total += parseFloat(dealerOptions[i].value);  
+
+        // Citation for Regular Expression: http://blog.tompawlak.org/number-currency-formatting-javascript
+        document.getElementById("totalPrice").value = "$" + total.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+    }
+
+  </script>
+
+  </body>
+</html>

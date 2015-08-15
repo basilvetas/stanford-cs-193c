@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Yahoo Weather via AJAX</title>
+
+    <!-- CSS Styling -->
+    <style type="text/css">
+
+      h4 {
+        margin: 0;
+      }
+
+      input {
+        margin: 0 0 0 5px;
+      }
+
+      textarea {
+        margin: 2px 0 0 0;
+        width: 350px;
+        height: 200px;
+      }
+
+      .left {
+        float: left;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <h1>Yahoo Weather via AJAX</h1>
+
+    <h4 class="left">Enter ZIP code: </h4> 
+    <form>
+      <input class="left" type="text" id="zipCode" />
+      <input class="left" type="button" value="Get Weather" onclick="getWeather()" />  
+      <input class="left" type="button" value="Clear" onclick="clearData()" />  
+    </form>
+
+    <div class="clear"></div>
+
+    <textarea readonly id="results"></textarea>
+
+  <!-- JavaScript -->
+  <script type="text/javascript" src="yahoo-weather.js"></script>
+  </body>
+</html>
+
+
+

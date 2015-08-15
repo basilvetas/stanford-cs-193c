@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- 
+  Author: Basil Vetas
+  Date: 7/9/15
+   -->
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Offices at Tresidder Union</title>
+
+    <!-- CSS Styling -->
+    <style type="text/css">
+      
+      #banner {
+        text-align: center;
+      }
+
+      #main {
+        width: 640px;
+        margin-left: auto;
+        margin-right: auto; 
+      }
+
+      #left {
+        width: 420px;
+        margin-right: 20px; 
+        float: left;
+      }
+
+      #right {
+        width: 180px;
+        float: right;
+      }
+
+      #seal {
+        margin: 20px 10px;
+      }
+
+      .clear {
+        clear: both;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <div id="banner"><img src="offices-bnr.gif" alt="Offices Banner" /></div>
+
+    <div id="main">
+      <div id="left">
+        <p>
+          Tresidder Union houses a number of University Offices. Most of these offices are part of the Vice-Provost Student Affairs (VPSA) organization.
+        </p>
+        <p>
+          To learn more about an individual office in Tresidder, select the name of the office from the pulldown menu below:
+        </p>
+        <form>
+          <select onchange="popUp(this.value);">
+            <option value="">Choose an Office</option>
+            <option value="0">Residential Education (ResEd)</option>
+            <option value="1">Student Services Center</option>
+            <option value="2">Office of Student Affairs (OSA)</option>
+            <option value="3">Vice-Provost of Student Affairs</option>
+          </select>
+        </form>
+      </div>
+      <div id="right">
+        <img id="seal" src="seal.gif" alt="Stanford Seal" />
+      </div>
+    </div>
+
+    
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+
+    var page1 = 
+    {
+      name: "Residential Education (ResEd)",
+      phone: "725-2800",
+      description: "The Office of Residential Education is responsible for developing the policies, programs, and staffing which support the intellectual, educational, and community-building activities in student residences.  Second Floor.",
+      logo: "resed.jpg"
+    };
+
+    var page2 = 
+    {
+      name: "Student Services Center",
+      phone: "723-7772",
+      description: "Visit the Student Services Center for assistance with university billing, financial aid disbursements, refunds, cash advances, payroll deductions, enrollment, Stanford degree policies & procedures, Stanford ID card, forms pickup & drop-off, and more..  Second floor.",
+      logo: "seal-small.gif"
+    }
+
+    var page3 = 
+    {
+      name: "Office of Student Activities (OSA)",
+      phone: "723-2733",
+      description: "Services for student organizations, student-initiated major events and programs, and fraternities and sororities.  Second floor.",
+      logo: "seal-small.gif"
+    }
+
+    var page4 = 
+    {
+      name: "Vice-Provost of Student Affairs",
+      phone: "725-0911",
+      description: "The Vice Provost for Student Affairs is responsible to the Provost for providing services and programs to undergraduate and graduate students in support of the academic mission of the University.  Second floor.",
+      logo: "seal-small.gif"
+    }
+
+    var pages = [page1, page2, page3, page4];
+
+
+    function popUp(newPage)
+    {    
+      if (newPage === "")
+        return;
+      
+      var newWindow;
+
+      if (!newWindow) 
+        newWindow = window.open("", "NewWindow", "width=500, height=400");
+
+      newWindow.document.writeln("<h1>" + pages[newPage].name + "</h1>");
+      newWindow.document.writeln("<h4>" + pages[newPage].phone + "</h4>");
+      newWindow.document.writeln("<p id='p'>" + pages[newPage].description + "</p>");
+      newWindow.document.writeln("<img id='img' src='" + pages[newPage].logo + "' alt='logo' />");
+      newWindow.document.body.style.fontFamily = "sans-serif";        
+      newWindow.document.getElementById('p').style.float = "left";
+      newWindow.document.getElementById('p').style.width = "350px"
+      newWindow.document.getElementById('img').style.float = "left";
+      newWindow.document.getElementById('img').style.width = "120px";
+      newWindow.document.close();
+      newWindow.focus();
+          
+    }
+
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- 
+  Author: Basil Vetas
+  Date: 7/9/15
+   -->
+  
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bookland</title>
+
+    <!-- CSS Styling-->
+    <style type="text/css">
+
+      body {
+        background: #D8E3FF;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 100pt;
+        font-family: sans-serif;
+        letter-spacing: 15px;
+        text-align: center;
+      }
+
+      textarea {
+        border: none;
+        background: #D8E3FF;
+        resize: none;
+        width: 450px;
+        height: 300px;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      input {
+        background: #D8E3FF;
+        border: none;
+        border-bottom: 2px solid #000000;
+      }
+
+      #main {
+        margin: 10px 200px;
+        border: 2px solid #000000;
+      }
+
+      .inner {
+        margin: 10px 200px;
+      }
+
+      .border {
+        border: 2px dotted #000000;
+      }
+
+      .center {
+        margin-left: 150px;
+      }
+
+      .tab {
+        padding-left: 55px;
+      }
+
+      .red {
+        border: 2px solid red;
+        color: red;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <h1>bookland</h1>
+
+    <div id="main">
+      <div class="inner">
+        <form>
+          <table>
+            <tr>
+              <td>Author Name: </td>
+              <td class="tab"><input type="text" id="authorName"/></td>
+            </tr>
+            <tr>
+              <td>Book Name:</td>
+              <td class="tab"><input type="text" id="bookName"/></td>
+            </tr>
+          </table>
+          <div class="center">
+            <input class="red" type="button" value="Find Book" onclick="findBook()"/>  
+            <input class="red" type="button" value="Clear Info" onclick="clearInfo()"/>  
+          </div>
+        </form>
+      </div>
+
+      <div class="inner border">
+        <textarea readonly id="results"></textarea>
+      </div>
+      
+    </div>
+
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+      "use strict";
+
+      var book1 = 
+      {
+        title: "Death in Venice", 
+        author: "Thomas Mann", 
+        description: "One of the most famous literary works of the twentieth century, this novella embodies themes that preoccupied Thomas Mann in much of his work: the duality of art and life, the presence of death and disintegration in the midst of existence, the connection between love and suffering and the conflict between the artist and his inner self."
+      };
+
+      var book2 = 
+      {
+        title: "A portrait of the artist as a young man", 
+        author: "James Joyce", 
+        description: "This book is a fictional re-creation of the Irish writer's own life and early environment. The experiences of the novel's young hero, unfold in astonishingly vivid scenes that seem freshly recalled from life and provide a powerful portrait of the coming of age of a young man of unusual intelligence, sensitivity and character."
+      };
+
+      var book3 = 
+      {
+        title: "A room with a view", 
+        author: "E. M. Forster", 
+        description: "This work displays an unusually perceptive view of British society in the early 20th century.It is a social comedy set in Florence, Italy, and Surrey, England. Its heroine, Lucy Honeychurch, struggling against straitlaced Victorian attitudes of arrogance, narroe mindedness and sobbery, falls in love - while on holiday in Italy - with the socially unsuitable George Emerson."
+      };
+
+      var book4 = 
+      {
+        title: "The house of spirits", 
+        author: "Isabel Allende", 
+        description: "Allende describes the life of three generations of a prominent family in Chile and skillfully combines with this all the main historical events of the time, up until Pinochet's dictatorship."
+      };
+
+      var book5 = 
+      {
+        title: "Of love and shadows", 
+        author: "Isabel Allende", 
+        description: "The whole world of Irene Beltran, a young reporter in Chile at the time of the dictatorship, is destroyed when she discovers a series of killings carried out by government soldiers. With the help of a photographer, Francisco Leal, and risking her life, she tries to come up with evidence against the dictatorship."
+      };
+
+      var books = [book1, book2, book3, book4, book5];
+
+      function findBook()
+      {
+        var authorName = document.getElementById("authorName").value;
+        var bookName = document.getElementById("bookName").value;
+
+        // alert(authorName);
+        // alert(bookName);
+
+        if((authorName !== "") && (bookName !== ""))
+        {
+          for(var i = 0; i < books.length; i++)
+          {
+            if((authorName === books[i].author) && (bookName === books[i].title))
+            {
+              document.getElementById("results").value = books[i].description;
+              break;
+            }
+          }
+        }
+        else if(authorName !== "")
+        {
+          for(var i = 0; i < books.length; i++)
+          {
+            if(authorName === books[i].author)
+            {
+              document.getElementById("results").value = books[i].title + "\n" + books[i].description;
+              break;
+            }
+          }
+        }
+        else if(bookName !== "")
+        {
+          for(var i = 0; i < books.length; i++)
+          {
+            if(bookName === books[i].title)
+            {
+              document.getElementById("results").value = books[i].author + "\n" + books[i].description;
+              break;
+            }
+          }
+        }
+
+        if(document.getElementById("results").value === "")
+        {
+          document.getElementById("results").value = "Book not found";
+        }
+      }
+
+      function clearInfo()
+      {
+        document.getElementById("authorName").value = "";
+        document.getElementById("bookName").value = "";
+        document.getElementById("results").value = "";
+      }
+
+    </script>
+  </body>
+</html>
+
+
+
+
+

@@ -1,0 +1,122 @@
+/* 
+  Project: Stanford History Blog
+  Author: Basil Vetas
+  Date: 6/26/2015
+*/
+
+body {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;  
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;    
+}
+
+footer {
+  height: 60px;
+  background: #9A0000;
+  padding: 0px 100px 0px 100px;  
+}
+
+footer p {
+  margin: 0;
+  padding: 20px 0 0 0;
+  float: right;
+  color: #FFF;
+}
+
+a {  
+  color: #000;
+}
+
+a:visited {
+  color: #9A0000;
+}
+
+a:hover {
+  color: #FFF;
+}
+
+#all {  
+  border-right: 1px solid #9A0000;  
+}
+
+#titlebar {  
+  height: 114px;
+  padding: 20px 0 20px 200px;    
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;  
+  font-size: 35px;
+  color: #9A0000;
+  border-bottom: 1px solid #9A0000;
+}
+
+#main {
+  background: white url('memchu.jpg') no-repeat fixed;
+  background-size: 100% 100%;  
+  padding: 50px 100px 50px 100px;
+}
+
+#logo {
+  float: right;  
+  width: 5%;
+  height: auto;
+}
+
+#seal {
+ float: left; 
+ margin: 0 20px 0 0;  
+ width: 10%;
+ height: auto;
+}
+
+/*----------------------------------------------------------------------------- 
+Blog Entries
+-----------------------------------------------------------------------------*/
+
+.entry {
+  background: rgba(255,255,255, 0.7);
+  border-radius: 15px 60px 15px 60px;  
+  margin: 20px;
+  padding: 50px;
+}
+
+.entryheading {
+  border-bottom: 1px dotted #000;
+  padding: 20px 0 20px 0;  
+}
+
+.entrytitle {
+  text-decoration: underline;
+  font-size: 30px;
+  margin: 0;
+}
+
+.entrydate {
+  font-style: italic;
+}
+
+.entrycontents {
+  font-size: 20px;
+  margin: 20px 0 20px 0;
+}
+
+.entryfooter {
+  border-top: 1px dotted #000;  
+  padding: 20px 0 0 0;
+}
+
+.entrytags {
+  text-align: right;
+  font-style: italic;
+}
+
+.last {
+
+}
+
+.clear {
+  clear: both;
+}
+

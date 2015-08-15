@@ -1,0 +1,46 @@
+/* 
+  Project: Personal Webpage
+  Author: Basil Vetas
+  Date: 6/26/2015
+*/
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;  
+}
+
+p, li {
+  font-size: 20px;
+}
+
+img {
+  float: left;
+  border: solid;
+  padding: 15px;
+  margin: 15px;
+}
+
+a:hover {
+  color: red;
+}
+
+#top-par {
+  padding-top: 25px;
+}
+
+#content {
+  margin: 0 100px 100px 100px;  
+}
+
+.clear {
+  clear: both;
+}
+
+.stanford {
+  color: red;
+  font-weight: bold;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bay Area Colleges and Universities</title>
+
+    <!-- Link to external CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="colleges.css" />
+  </head>
+  <body onload="loadTable()">
+    <h1>
+      Bay Area Colleges and Universities
+    </h1>
+
+    <div class="left">
+      <p id="test"></p>
+      <table id="colleges">
+        <tr id="header">
+          <td class="border">Name</td>
+          <td class="border">SAT High</td>
+          <td class="border">SAT Low</td>
+          <td>Tuition</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="left">
+      <div class="outline">
+        <p id="search">Search Criteria</p>
+        <form name="ownership">      
+          <input type="radio" name="type" value="public" /> Public
+          <input type="radio" name="type" value="private" /> Private
+          <input type="radio" name="type" value="dontCare" /> Don't Care
+          <table id="search-criteria">
+            <tr>
+              <td><ul><li>Maximum Tuition</li><li class="small">leave blank for don't care</li></ul></td> 
+              <td><input class="right criteria" type="text" id="maxTuition"/></td> 
+            </tr>
+            <tr>
+              <td><ul><li>Maximum High SAT</li><li class="small">leave blank for don't care</li></ul></td> 
+              <td><input class="right criteria" type="text" id="maxHighSat"/></td> 
+            </tr>
+            <tr>
+              <td><ul><li>Minimum Low SAT</li><li class="small">leave blank for don't care</li></ul></td> 
+              <td><input class="right criteria" type="text" id="minLowSat"/></td> 
+            </tr>
+          </table>
+        </form>   
+      </div>   
+      <input class="left" type="button" value="Update" onclick="updateColleges()"/>  
+    </div>
+
+    <!-- Link to external JavaScript -->
+    <script type="text/javascript" src="colleges.js"></script>  
+  </body>
+</html>
+

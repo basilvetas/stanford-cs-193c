@@ -1,0 +1,96 @@
+/*
+Author: Basil Vetas;
+Date: 7/6/2015;
+*/
+
+h1 {
+  margin: 0;
+  padding: 32px 0 0 10px;
+  height: 88px; /* 120px - 32px */
+  background: #9A0000;
+  color: #FFFFFF;
+  font-size: 42pt;
+  font-weight: bold;
+  font-family: sans-serif;  
+}
+
+h2 {
+  margin: 10px 0;
+  padding: 0;
+  font-weight: bold;
+  font-family: sans-serif;  
+}
+
+h6 {
+  margin: 0;
+  padding: 5px;
+  background: #CC9191;
+  border-top: solid 2px #000000;
+  border-bottom: solid 2px #000000;
+  font-weight: bold;
+  font-family: sans-serif;  
+}
+
+p {
+  margin: 3px 0;
+  padding: 0;
+  font-size: 9pt;
+  font-family: sans-serif;  
+}
+
+form {
+  margin-top: 15px;
+  width: 250px;
+}
+
+textarea {
+  resize: none;
+  width: 250px;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+#left-col {
+
+}
+
+#right-col {
+  margin: 0 15px;
+}
+
+#content {
+  margin: 15px 0 15px 15px;
+}
+
+#inner-left-col {
+  width: 31%;
+}
+
+#inner-right-col {
+  width: 64%;
+  padding: 0 15px;
+}
+
+.wide {
+  width: 100%;
+}
+
+.left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.update {
+  padding: 10px 0;
+  margin-top: 10px;
+  border-top: solid 1px #000000;
+}
+
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="cities">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cities</title>
+    <script src="angular.js"></script>
+    <script src="cities-controller.js"></script>
+    <style type="text/css">
+      body {
+        margin: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div ng-controller="citiesController">
+      Search: <input type="text" ng-model="searchitem"/>
+      <ul>
+        <li ng-repeat="city in cities | filter: searchitem">{{city.metropolis}}, {{city.continent}}, {{city.population}}</li>
+      </ul>
+    </div>
+  </body>
+</html>

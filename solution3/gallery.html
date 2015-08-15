@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Stanford Gallery</title>
+
+		<!-- Link to external CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="gallery.css" />
+
+	</head>
+	<body onload="handleResize()">
+
+		<div id="photoSection">
+
+			<img  id='photo' src='memchu.jpg' alt='photo' />
+
+			<div id="caption">
+				Stanford Memorial Church - the church used to have an 80' bell tower, which fell in the 1906 earthquake.
+			</div> <!-- END #caption  -->
+
+			<div id="forwardOverlay" onclick="nextImg()">
+			</div> <!-- END #forwardOverlay  -->
+				
+			<div id="backwardOverlay" onclick="previousImg()"> 
+			</div> <!-- END #backwardOverlay  -->
+				
+		</div> <!-- END #photoSection  -->
+
+		<!-- Link to external JavaScript -->
+    <script type="text/javascript" src="gallery.js"></script>  
+	</body>
+</html>
